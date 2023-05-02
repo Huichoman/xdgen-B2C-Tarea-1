@@ -1,0 +1,66 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+#headerContainer{
+  background-color: #BBDEDF;
+  height: 10vh;
+}
+
+form {
+  background-color: #EFF5F5;
+  
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+ 
+}
+
+/* #cardsContainer{
+  max-height: 100%;
+} */
+  #cardContainer {
+    background-color: #EFF5F5;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    cursor: pointer;
+  }
+
+#avatarContainer {
+    padding-right: 0%;
+}
+
+#rankImage{
+  height: 4.5rem;
+}
+
+#statsContainer{
+  height: 4rem;
+}
+
+#statValueText {
+  font-size: 1.8rem;
+  color: #00ADB8;
+}
+
+#statLabelText {
+  font-size: 1rem;
+  color: #868C8C;
+}
+
+.btn {
+  background-color: #BBDEDF !important;
+  background-color: #bbdedfb9 !important;
+  
+}
