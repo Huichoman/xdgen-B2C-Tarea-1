@@ -39,7 +39,16 @@ function insertCard(trailblazer) {
     "'  class='d-flex flex-column  bg-transparent  border-0 justify-content-center my-3 mx-auto ' style='width: 30rem; display:none; animation: show 1s;'>";
 
   html +=
-    "<div id='cardContainer' class=' d-flex flex-column  align-items-center'>";
+    "<div id='cardContainer' class=' d-flex flex-column  align-items-center position-relative'>";
+
+  html += "<div id='cardControls' class='badge p-2 '>";
+
+  html +=
+    "<svg id='svgEdit' fill='none' width='20' height='20' viewBox= '0 0 24 24' stroke-width='1' stroke='currentColor' class='w-1 h-1'><path stroke-linecap='round' stroke-linejoin='round' d='M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10' /></svg>";
+  html +=
+    "<svg id='svgDelete' fill='none' width='20' height='20' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-6 h-6'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /> </svg>";
+  html += "</div>";
+
   html +=
     "<div id='avatarContainer' class='d-flex flex-column  align-items-center mt-2'>";
   html +=
@@ -81,7 +90,14 @@ function insertCard(trailblazer) {
 
   html += "</div></div></div>";
 
-  jQuery("div[id='cardsContainer']").prepend(html);
-
+  $("div[id='cardsContainer']").prepend(html);
+  $("#trailblazer" + trailblazer.id).data("trailblazer", {
+    name: trailblazer.name,
+    lastName: trailblazer.lastName,
+    points: trailblazer.points,
+    badges: trailblazer.badges,
+    trails: trailblazer.trails,
+    id: trailblazer.id,
+  });
   $("#trailblazer" + trailblazer.id).slideDown(600);
 }
