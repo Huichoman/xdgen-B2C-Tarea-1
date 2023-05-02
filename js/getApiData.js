@@ -14,7 +14,7 @@ function getApiData() {
   });
 }
 
-function insertCard(trailblazer) {
+function insertCard(trailblazer, formData) {
   var rankName = "scout.png";
 
   if (trailblazer.points >= 200) rankName = "hiker.png";
@@ -36,7 +36,7 @@ function insertCard(trailblazer) {
   html +=
     "<div id='trailblazer" +
     trailblazer.id +
-    "'  class='d-flex flex-column  bg-transparent  border-0 justify-content-center my-3 mx-auto ' style='width: 30rem; display:none; animation: show 1s;'>";
+    "'  class='d-flex flex-column  bg-transparent  border-0 justify-content-center mt-2 mb-4 mx-auto ' style='width: 30rem; display:none; animation: show 1s;'>";
 
   html +=
     "<div id='cardContainer' class=' d-flex flex-column  align-items-center position-relative'>";
@@ -90,7 +90,11 @@ function insertCard(trailblazer) {
 
   html += "</div></div></div>";
 
-  $("div[id='cardsContainer']").prepend(html);
+  if (formData == "PUT") {
+    console.log("Refresh updated card");
+    $("#trailblazer" + trailblazer.id).html(html);
+  } else $("div[id='cardsContainer']").prepend(html);
+
   $("#trailblazer" + trailblazer.id).data("trailblazer", {
     name: trailblazer.name,
     lastName: trailblazer.lastName,

@@ -19,17 +19,31 @@
   
     <div class="container-fluid bg-light">
         
-        <div id="headerContainer" class="d-flex py-1">
+        <div id="headerContainer" class="d-flex py-1 mb-2">
             <img class="ml-3" src="https://labsxd.com/wp-content/uploads/2020/11/group-7.png">
-            <img class="" src="https://labsxd.com/wp-content/uploads/2021/11/1121006_logo_300x150-1.png">
-           
-            
+            <img class="" src="https://labsxd.com/wp-content/uploads/2021/11/1121006_logo_300x150-1.png">            
         </div>
         
-        <div class="row pt-0">
-            
-          <div id="formContainer" class="col-sm-12 col-md-6 px-5 mt-4">
+        <div  class="d-flex py-0 my-0">
+          <div class="col-sm-12 col-md-6 ">
+            <h3 id="formTitle">Create</h3>
            
+
+          </div>
+          <div class="col-sm-12 col-md-6  mx-auto">
+            <div class="d-flex flex-row justify-content-center mx-auto">
+              <h3>Trailblazers</h3>             
+               
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="row pt-0">
+          
+            
+          <div id="formContainer" class="col-sm-12 col-md-6 px-5 mt-2">
+            
             <form id="formTrailblazer" class="row g-2 pb-3 position-relative">
               
                 <div class="col-md-6">
@@ -54,13 +68,29 @@
                 
                 <div class="col-md-6">
                   <label for="inputTrails" class="form-label">Trails</label>
-                  <input type="number" class="form-control mb-4" id="inputTrails" required>
-                  
-                </div>  
-              
+                  <input type="number" class="form-control mb-4" id="inputTrails" required>                  
+                </div> 
+                
+                <div class="col-md-6">
+                  <div class="d-flex flex-column justify-content-center  h-100">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="formAction" id="createAction" value="POST" checked>
+                      <label class="form-check-label" for="createAction">
+                        Create
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="formAction" id="updateAction" value="PUT" disabled>
+                      <label class="form-check-label" for="updateAction">
+                      Update
+                      </label>
+                    </div>
+                </div>
+              </div>
                 <div class="col-md-12 ">
                     <div class="row justify-content-end pr-5">
-                  <button class="btn " type="submit">Submit form</button>
+                      <input type="text" id="id" value="" hidden>
+                  <button class="btn" id="submitBtn" type="submit">Submit</button>
                     </div>
                 </div>
               </form>
@@ -69,7 +99,7 @@
           </div>
           
           <div id="cardsContainer" class="col-sm-12 col-md-6 mt-2 mb-0 pb-5"  style="max-height: 90vh; overflow-y: auto;">
-            
+           
           </div>
         </div>
         </div>
@@ -78,7 +108,7 @@
     
       <script src="./js/listCards.js"> </script>
       <script src="./js/handleSubmit.js"> </script>
-      <!-- <script src="./js/onEdit.js"> </script> -->
+    
 
 </body>
 </html>

@@ -1,8 +1,9 @@
 $(document).ready(function () {
-  var urlAPI = "https://644d97bd57f12a1d3de247cf.mockapi.io/trailblazer";
-
   $("#formTrailblazer").on("submit", function (e) {
+    var urlAPI = "https://644d97bd57f12a1d3de247cf.mockapi.io/trailblazer";
     e.preventDefault();
+
+    var formAction = $("input[name='formAction']:checked").val();
 
     var formData = {
       name: $("#inputFirstName").val(),
@@ -10,10 +11,13 @@ $(document).ready(function () {
       points: $("#inputPoints").val(),
       badges: $("#inputBadges").val(),
       trails: $("#inputTrails").val(),
+      id: $("#id").val(),
     };
+    console.log("ID >", formData.id);
+    if (formAction == "PUT") urlAPI += "/" + formData.id;
 
     $.ajax({
-      type: "POST",
+      type: formAction,
       url: urlAPI,
       data: formData,
       dataType: "json",
@@ -21,7 +25,7 @@ $(document).ready(function () {
     }).done(function (data) {
       console.log("New trailblazer > ", data);
       $.getScript("./js/getApiData.js", function () {
-        insertCard(data);
+        insertCard(data, formAction);
       });
     });
   });
