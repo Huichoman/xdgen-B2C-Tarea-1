@@ -1,4 +1,13 @@
 var urlAPI = "https://644d97bd57f12a1d3de247cf.mockapi.io/trailblazer";
+var originalFormValue = {
+  name: "",
+  lastName: "",
+  points: "",
+  badges: "",
+  trails: "",
+};
+
+var formMode = "create";
 
 function getApiData() {
   $.ajax({

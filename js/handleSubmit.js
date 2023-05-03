@@ -29,20 +29,4 @@ $(document).ready(function () {
       });
     });
   });
-
-  $(document).on("click", "#svgDelete", function (e) {
-    var parentId = e.target.parentNode.parentNode.parentNode.id;
-    const { name, lastName, points, badges, trails, id } = $(
-      "#" + parentId
-    ).data("trailblazer");
-    console.log("Edit card data > ", id);
-
-    $.ajax({
-      url: urlAPI + `/${id}`,
-      type: "DELETE",
-      success: function (result) {
-        $("#" + parentId).remove();
-      },
-    });
-  });
 });
