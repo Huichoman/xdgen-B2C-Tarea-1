@@ -43,7 +43,7 @@ $(document).ready(function () {
       trails: $("#inputTrails").val(),
     };
     if (formMode == "update") {
-      console.log("lastValue > ", originalFormValue);
+      // console.log("lastValue > ", originalFormValue);
       if (
         formData.name != originalFormValue.name ||
         formData.lastName != originalFormValue.lastName ||
@@ -55,7 +55,7 @@ $(document).ready(function () {
       } else {
         $("#submitBtn").prop("disabled", true);
       }
-    }
+    } else $("#submitBtn").prop("disabled", false);
   });
 
   $("input[id='updateAction']").on("change", function () {
