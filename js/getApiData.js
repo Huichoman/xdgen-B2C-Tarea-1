@@ -45,7 +45,7 @@ function insertCard(trailblazer, formData) {
   html +=
     "<div id='trailblazer" +
     trailblazer.id +
-    "'  class='d-flex flex-column  bg-transparent  border-0 justify-content-center mt-2 mb-4 mx-auto ' style='width: 30rem; display:none; animation: show 1s;'>";
+    "'  class='trailCards d-flex flex-column  bg-transparent  border-0 justify-content-center mt-2 mb-4 mx-auto' style='display:none; animation: show 1s;'>";
 
   html +=
     "<div id='cardContainer' class=' d-flex flex-column  align-items-center position-relative'>";

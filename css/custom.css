@@ -1,6 +1,5 @@
 
 
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -11,6 +10,7 @@ body {
   -ms-overflow-style: none; /* for Internet Explorer, Edge */
   scrollbar-width: none; /* for Firefox */
   overflow-y: scroll; 
+  overflow-x: none; 
   max-height: 90vh;
   font-family: 'Poppins', sans-serif;
 }
@@ -75,13 +75,12 @@ form {
   justify-content: space-between;
   position:absolute;
   top: 1rem;
-  right: 1rem;
-  
+  right: 1rem;  
   border-style: none;
   border-width: 1px;
   display: none;
-
 }
+
 #cardContainer:hover{
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
@@ -137,6 +136,7 @@ svg:hover {
 #meLink {
   color: #005C76;
   margin-left: 1rem;
+  margin-right: 1rem;
   margin-top: auto;
   margin-bottom: auto;
   font-size: 1.2rem;
@@ -148,16 +148,68 @@ h3 {
   color: #005C76;
 }
 
+#cardsSectionTitle2{
+  display: none;
+}
+
+[class^="trailCards"] {
+  width: 30rem;
+}
+
 @media (max-width: 575.98px) { 
   #cardControls {
     display: flex;
   }
 
   #cardContainer {   
-    width: 90vw;
+    width: 100%;
   }
 
   #cardsContainer {
-    width: 95vw;
+    width: 100% !important;
+  }
+
+  #trailblazer {
+    width: 100vw !important;
+  }
+
+  svg {
+    transform: scale(1.3);
+  }
+
+  #cardControls{    
+    height: 2rem;
+    width: 5rem;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;  
+  }
+
+  #statValueText {
+    font-size: 1.5rem;   
+  }
+
+  #cardsSectionTitle1{
+    display: none;
+  }
+
+  #cardsSectionTitle2{
+    display:flex;
+  }
+
+  [class^="trailCards"] {
+    width: 90vw !important;
+  }
+
+  #meLink {
+   
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;   
+    font-size: 1rem;   
+  }
+
+  #headerContainer{
+    justify-content: center !important;
   }
 }
