@@ -147,3 +147,17 @@ svg:hover {
 h3 {
   color: #005C76;
 }
+
+@media (max-width: 575.98px) { 
+  #cardControls {
+    display: flex;
+  }
+
+  #cardContainer {   
+    width: 90vw;
+  }
+
+  #cardsContainer {
+    width: 95vw;
+  }
+}
