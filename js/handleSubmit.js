@@ -23,6 +23,16 @@ $(document).ready(function () {
       dataType: "json",
       encode: true,
     }).done(function (data) {
+      $("input[id='updateAction']").prop("checked", false);
+      $("input[id='createAction']").prop("checked", true);
+      $("input[id='updateAction']").prop("disabled", true);
+      $("#formTitle").text("Create");
+
+      $("input[id='inputFirstName']").val("");
+      $("input[id='inputLastName']").val("");
+      $("input[id='inputPoints']").val("");
+      $("input[id='inputBadges']").val("");
+      $("input[id='inputTrails']").val("");
       console.log("New trailblazer > ", data);
       $.getScript("./js/getApiData.js", function () {
         insertCard(data, formAction);
